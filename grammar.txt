@@ -1,0 +1,25 @@
+---protocol model---
+
+t: INT
+l: INT
+c: INT
+v: INT | STR | protocol | array
+
+item: v | lv | tlv
+	c array | t c array
+
+array: item [ ]
+
+protocol: item |
+	protocol | item
+
+
+---cmd model---
+
+PLAIN: INT | STR
+PROTO: value |
+	PROTO | value
+ARRAY: value [ ]
+
+value: PLAIN | PROTO | ARRAY
+
