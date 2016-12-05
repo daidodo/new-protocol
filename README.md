@@ -9,7 +9,7 @@ uint16_t version;
 ```
 you can translate it into **CProtocol** object using code like this:
 ```
-include "proto.h"
+#include "proto.h"
 
 CProtocol protocol_0x22;
 
@@ -30,7 +30,7 @@ or get the values of fields, like this:
 ```
 cout << cmd.GetInt("ptl");
 ```
-But the most interesting part is, you can now encode the cmd object into bytes stream of format protocol 0x22, with one line of code:
+But the most interesting part is, you can now encode the *cmd* object into bytes stream of format protocol 0x22, with one line of code:
 ```
 COutStream out;
 cmd.Encode(out);
